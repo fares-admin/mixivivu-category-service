@@ -5,14 +5,11 @@ on:
     branches:
       - develop
       - main
-    paths:
-      - "category-service/**"
+
   push:
     branches:
       - develop
       - main
-    paths:
-      - "category-service/**"
 
 jobs:
   build-develop:
@@ -25,8 +22,6 @@ jobs:
         with:
           node-version: "16.x"
       - name: install packages
-        working-directory: ./category-service
         run: npm install
       - name: build next
-        working-directory: ./category-service
         run: npm run build
